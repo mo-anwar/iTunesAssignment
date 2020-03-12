@@ -17,9 +17,13 @@ extension UITableViewCell {
 }
 
 extension UICollectionViewCell {
-    
     class var cellId: String {
         return "\(self)"
     }
-    
+}
+
+extension UICollectionReusableView {
+    class var headerId: String {
+        return "\(self)"
+    }
 }

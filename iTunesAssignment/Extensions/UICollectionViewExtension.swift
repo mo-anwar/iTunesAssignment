@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum CollectionViewSupplementaryViewKind: String {
+    case header = "UICollectionElementKindSectionHeader"
+    case footer = "UICollectionElementKindSectionFooter"
+}
+
 extension UICollectionView {
     
     func dequeueCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
@@ -16,5 +21,9 @@ extension UICollectionView {
     
     func register<T: UICollectionViewCell>(cell: T.Type) {
         register(cell.nib, forCellWithReuseIdentifier: cell.className)
+    }
+    
+    func register<T: UICollectionReusableView>(reusableView: T.Type, for kind: CollectionViewSupplementaryViewKind) {
+        register(reusableView.nib, forSupplementaryViewOfKind: kind.rawValue, withReuseIdentifier: reusableView.className)
     }
 }

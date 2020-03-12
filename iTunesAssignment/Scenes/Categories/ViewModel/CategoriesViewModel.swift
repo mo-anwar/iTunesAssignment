@@ -8,17 +8,10 @@
 import Foundation
 
 struct CategoriesModel {
-    struct Request {
-        
-    }
-    
-    struct Response {
-        
-    }
-    
+
     struct ViewModel {
         var categories: [Category]
-        
+
         struct Category {
             let id: Int
             let name: String

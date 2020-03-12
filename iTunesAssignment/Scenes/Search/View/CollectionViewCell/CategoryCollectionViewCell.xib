@@ -10,14 +10,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoryCollectionViewCell" customModule="iTunesAssignment" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="114" height="40"/>
+            <rect key="frame" x="0.0" y="0.0" width="114" height="35"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="114" height="40"/>
+                <rect key="frame" x="0.0" y="0.0" width="114" height="35"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylG-RL-xPi">
-                        <rect key="frame" x="0.0" y="0.0" width="114" height="40"/>
+                        <rect key="frame" x="8" y="8" width="98" height="19"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -26,12 +26,18 @@
             </view>
             <color key="backgroundColor" red="0.22617658970000001" green="0.45747143029999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="ylG-RL-xPi" secondAttribute="bottom" id="0bi-rm-LL8"/>
-                <constraint firstItem="ylG-RL-xPi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0kC-Ge-Fii"/>
-                <constraint firstItem="ylG-RL-xPi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4Ze-ap-u6q"/>
-                <constraint firstAttribute="trailing" secondItem="ylG-RL-xPi" secondAttribute="trailing" id="pZ1-do-6w6"/>
+                <constraint firstAttribute="bottom" secondItem="ylG-RL-xPi" secondAttribute="bottom" constant="8" id="0bi-rm-LL8"/>
+                <constraint firstItem="ylG-RL-xPi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="0kC-Ge-Fii"/>
+                <constraint firstItem="ylG-RL-xPi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="4Ze-ap-u6q"/>
+                <constraint firstAttribute="trailing" secondItem="ylG-RL-xPi" secondAttribute="trailing" constant="8" id="pZ1-do-6w6"/>
             </constraints>
             <size key="customSize" width="114" height="40"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="8"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="categoryNameLabel" destination="ylG-RL-xPi" id="8Fu-i0-5WM"/>
             </connections>

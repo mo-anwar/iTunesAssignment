@@ -9,6 +9,7 @@ import Foundation
 
 class CategoriesInteractor {
     var output: CategoriesInteractorOutputProtocol!
+    private var selectedCategoriesIds: [Int]
     private var items: [CategoriesModel.ViewModel.Category] = [
         .init(id: 1, name: "Album"),
         .init(id: 2, name: "Artist"),
@@ -20,12 +21,7 @@ class CategoriesInteractor {
     ]
     
     init(selectedCategoriesIds: [Int]) {
-        for index in items.indices {
-            if selectedCategoriesIds.contains(items[index].id) {
-                items[index].isSelected = true
-            }
-        }
-        output.dispaly(items: items)
+        self.selectedCategoriesIds = selectedCategoriesIds
     }
 }
 
@@ -37,6 +33,11 @@ extension CategoriesInteractor: CategoriesViewControllerOutputProtocol {
     }
     
     func getItems() {
+        for index in items.indices {
+            if selectedCategoriesIds.contains(items[index].id) {
+                items[index].isSelected = true
+            }
+        }
         output.dispaly(items: items)
     }
 }

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchResultsViewController" customModule="iTunesAssignment" customModuleProvider="target">
             <connections>
+                <outlet property="searchResultsCollectionView" destination="gF1-CR-Ar1" id="LYB-fG-RNJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gF1-CR-Ar1">
-                    <rect key="frame" x="0.0" y="42" width="375" height="625"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yXF-ug-R6A">
                         <size key="itemSize" width="50" height="50"/>
@@ -28,40 +29,16 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icP-0v-VFJ">
-                    <rect key="frame" x="0.0" y="8" width="183.5" height="26"/>
-                    <state key="normal" title="Grid Layout" image="ic_grid_view">
-                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6se-fO-se2">
-                    <rect key="frame" x="191.5" y="8" width="183.5" height="26"/>
-                    <state key="normal" title="Grid Layout" image="ic_list">
-                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="icP-0v-VFJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AzP-9n-DnC"/>
-                <constraint firstItem="6se-fO-se2" firstAttribute="leading" secondItem="icP-0v-VFJ" secondAttribute="trailing" constant="8" id="GwZ-0a-wAX"/>
-                <constraint firstItem="gF1-CR-Ar1" firstAttribute="top" secondItem="icP-0v-VFJ" secondAttribute="bottom" constant="8" id="M72-fO-oOg"/>
-                <constraint firstItem="6se-fO-se2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="QBA-rN-yGD"/>
-                <constraint firstItem="icP-0v-VFJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TF9-Ck-N7c"/>
-                <constraint firstItem="6se-fO-se2" firstAttribute="width" secondItem="icP-0v-VFJ" secondAttribute="width" id="Xln-bd-crH"/>
-                <constraint firstItem="icP-0v-VFJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="dRJ-KC-PX2"/>
+                <constraint firstItem="gF1-CR-Ar1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="YEF-Fa-r5e"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gF1-CR-Ar1" secondAttribute="trailing" id="jCZ-Wb-vkY"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6se-fO-se2" secondAttribute="trailing" id="mRn-M4-hFW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gF1-CR-Ar1" secondAttribute="bottom" id="rqQ-bn-L7f"/>
                 <constraint firstItem="gF1-CR-Ar1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xj5-Ey-Ul2"/>
-                <constraint firstItem="gF1-CR-Ar1" firstAttribute="top" secondItem="6se-fO-se2" secondAttribute="bottom" constant="8" id="yWa-9j-zAL"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="132" y="152.47376311844079"/>
         </view>
     </objects>
-    <resources>
-        <image name="ic_grid_view" width="26" height="26"/>
-        <image name="ic_list" width="25" height="25"/>
-    </resources>
 </document>

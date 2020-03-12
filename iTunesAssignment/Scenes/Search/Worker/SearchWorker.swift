@@ -6,10 +6,35 @@
 //  Copyright © 2020 S4M. All rights reserved.
 //
 
-final class SearchWorker {
-    // MARK: Business Logic
+import Foundation
+import Alamofire
+
+enum ErrorHandler: Error {
+    case noAvailableData
+}
+
+final class SearchWorker: SearchWorkerProtocol {
     
-    func doSomeWork() {
-        // NOTE: Do the work
+    func search(parameters: SearchModel.Request, completionHandler: @escaping (SearchResult) -> ()) {
+        
+        Alamofire.request(SearchNetworkRouter.search(parameters: parameters)).responseJSON { response in
+            switch response.result {
+            case .success(_):
+                do {
+                    if let data = response.data {
+                        let result = try JSONDecoder().decode(SearchModel.Response.self, from: data)
+                        if result.errorMessage != nil {
+                            completionHandler(.failure(ErrorHandler.noAvailableData))
+                        } else {
+                            completionHandler(.success(result))
+                        }
+                    }
+                } catch {
+                    completionHandler(.failure(error))
+                }
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+        }
     }
 }

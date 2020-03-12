@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import IQKeyboardManagerSwift
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func enableIQKeyboardManager() {
-//        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enable = true
     }
     
     private func initalizeWindow() {

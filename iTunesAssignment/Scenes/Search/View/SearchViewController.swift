@@ -29,8 +29,15 @@ final class SearchViewController: UIViewController {
     
     // MARK: SetupUI
     private func setupView() {
+        setupCollectionView()
+    }
+    
+    private func setupCollectionView() {
         categoriesCollectionView.dataSource =  self
         categoriesCollectionView.register(cell: CategoryCollectionViewCell.self)
+        let flowLayout = categoriesCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout
+        flowLayout?.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        flowLayout?.sectionInset = UIEdgeInsets(top: 4, left: 2, bottom: 4, right: 0)
     }
     
     // MARK: Actions
@@ -39,7 +46,15 @@ final class SearchViewController: UIViewController {
     }
     
     @IBAction private func didTapSubmitButton(_ sender: UIButton) {
-        
+        if let searchText = searchTextField.text {
+            if searchText.isEmpty {
+                showError(error: "Search Text is empty")
+            } else if categories.isEmpty {
+                showError(error: "Add atleast 1 Category.")
+            } else {
+                output.search(term: searchText, entities: categories.map { $0.name.lowercased()})
+            }
+        }
     }
 }
 
@@ -59,6 +74,26 @@ extension SearchViewController: UICollectionViewDataSource {
 // MARK: Connect View, Interactor, and Presenter
 extension SearchViewController: SearchPresenterOutputProtocol {
     
+    func display(results: SearchResultViewModel) {
+        router.navigateToSearchResult(results: results)
+
+    }
+    
+    func showIndicator() {
+        view.showActivityIndicator(isUserInteractionEnabled: false)
+    }
+    
+    func hideIndicator() {
+        view.hideActivityIndicator()
+    }
+    
+    func showError(error: String) {
+        AlertBuilder(title: "", message: error, preferredStyle: .alert)
+            .addAction(title: "Okay", style: .default, handler: nil)
+            .build()
+            .show()
+    }
+
 }
 
 // MARK: CategoriesViewControllerOutputDelegate

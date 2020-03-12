@@ -24,19 +24,4 @@ extension UIViewController {
     func pop() {
         navigationController?.popViewController(animated: true)
     }
-    
-    
-    func displayWarningAlert(leaveCompletion: (() -> Void)? = nil) {
-        let title = "ConstantTexts.warningAlertTitle.rawValue"
-        let message = "ConstantTexts.warningAlertMessage.rawValue"
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-
-        alertController.addAction(UIAlertAction(title: "ConstantTexts.warningAlertStayMessage.rawValue", style: .cancel, handler: nil))
-
-        alertController.addAction(UIAlertAction(title: "ConstantTexts.warningAlertLeaveMessage.rawValue", style: .default, handler: { _ in
-            leaveCompletion?()
-        }))
-
-        present(alertController, animated: true, completion: nil)
-    }
 }

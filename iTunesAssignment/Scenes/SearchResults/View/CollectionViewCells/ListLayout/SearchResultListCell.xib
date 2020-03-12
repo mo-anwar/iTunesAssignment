@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SearchResultListCell" customModule="iTunesAssignment" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="368" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="368" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IpR-iz-UdU">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="IpR-iz-UdU" secondAttribute="height" id="IBq-jX-e8e"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4da-Tg-87E">
+                        <rect key="frame" x="108" y="8" width="252" height="56.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPy-Q4-PLw">
+                        <rect key="frame" x="108" y="72.5" width="252" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="IpR-iz-UdU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="I4F-aU-uF2"/>
+                <constraint firstItem="VPy-Q4-PLw" firstAttribute="top" secondItem="4da-Tg-87E" secondAttribute="bottom" constant="8" id="PRX-3T-AJc"/>
+                <constraint firstAttribute="bottom" secondItem="IpR-iz-UdU" secondAttribute="bottom" id="Riz-ku-h3Z"/>
+                <constraint firstItem="IpR-iz-UdU" firstAttribute="width" secondItem="IpR-iz-UdU" secondAttribute="height" id="SQY-cv-PXS"/>
+                <constraint firstItem="4da-Tg-87E" firstAttribute="leading" secondItem="IpR-iz-UdU" secondAttribute="trailing" constant="8" id="VBN-Hp-X5z"/>
+                <constraint firstItem="VPy-Q4-PLw" firstAttribute="leading" secondItem="IpR-iz-UdU" secondAttribute="trailing" constant="8" id="cUc-Uf-2FK"/>
+                <constraint firstAttribute="trailing" secondItem="4da-Tg-87E" secondAttribute="trailing" constant="8" id="fVF-CD-toX"/>
+                <constraint firstItem="IpR-iz-UdU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jXT-rD-VfW"/>
+                <constraint firstAttribute="trailing" secondItem="VPy-Q4-PLw" secondAttribute="trailing" constant="8" id="lCK-f9-Ore"/>
+                <constraint firstItem="4da-Tg-87E" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="rBq-Nc-CNY"/>
+                <constraint firstAttribute="bottom" secondItem="VPy-Q4-PLw" secondAttribute="bottom" constant="8" id="sxC-QG-fCb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="368" height="99"/>
+            <connections>
+                <outlet property="artistNameLabel" destination="VPy-Q4-PLw" id="xY9-tq-ToC"/>
+                <outlet property="previewImageView" destination="IpR-iz-UdU" id="G2i-zy-MHH"/>
+                <outlet property="trackNameLabel" destination="4da-Tg-87E" id="9Wm-IB-bie"/>
+            </connections>
+            <point key="canvasLocation" x="362.31884057971018" y="169.75446428571428"/>
+        </collectionViewCell>
+    </objects>
+</document>

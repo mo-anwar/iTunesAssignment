@@ -18,4 +18,10 @@ extension SearchRouter: SearchRouterProtocol {
     func navigateToCategories(selectedCategoriesIds: [Int]) {
         viewController.navigationController?.pushViewController(CategoriesConfigurator.viewcontroller(outputDelegate: viewController, selectedCategoriesIds: selectedCategoriesIds), animated: true)
     }
+    
+    func navigateToSearchResult(results: SearchResultViewModel) {
+        viewController.navigationController?.pushViewController(SearchResultsConfigurator.viewcontroller(results: results), animated: true)
+    }
+    
+    
 }
