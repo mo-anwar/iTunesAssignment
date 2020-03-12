@@ -16,7 +16,7 @@ final class SearchResultsViewController: UIViewController {
     
     // MARK: Properties
     var router: SearchResultsRouterProtocol!
-    private var layoutType = LayoutType.grid { didSet { searchResultsCollectionView.reloadData() }}
+    private var layoutType = LayoutType.grid { didSet { reloadCollectionViewWithAnimation() }}
     private var viewModels = [SearchModel.ViewModel]()
     
     private enum LayoutType {
@@ -65,6 +65,12 @@ final class SearchResultsViewController: UIViewController {
     
     @objc private func didTapListLayoutButton(_ sender: UIButton) {
         layoutType = .list
+    }
+    
+    private func reloadCollectionViewWithAnimation() {
+        UIView.transition(with: searchResultsCollectionView, duration: 0.5, options: layoutType == .grid ? .transitionFlipFromLeft : .transitionFlipFromRight, animations: {
+            self.searchResultsCollectionView.reloadData()
+        }, completion: nil)
     }
 }
 
