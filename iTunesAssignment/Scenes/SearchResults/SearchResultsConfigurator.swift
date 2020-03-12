@@ -6,10 +6,9 @@
 //  Copyright © 2020 S4M. All rights reserved.
 //
 
-
 import UIKit
 
-class SearchResultsConfigurator {
+final class SearchResultsConfigurator {
     
     // MARK: Configuration
     class func viewcontroller(results: SearchResultViewModel) -> SearchResultsViewController {

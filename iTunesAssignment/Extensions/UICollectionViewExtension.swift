@@ -16,7 +16,17 @@ enum CollectionViewSupplementaryViewKind: String {
 extension UICollectionView {
     
     func dequeueCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
-        return self.dequeueReusableCell(withReuseIdentifier: T.className, for: indexPath) as! T
+        guard let cell = self.dequeueReusableCell(withReuseIdentifier: T.className, for: indexPath) as? T else {
+            fatalError("DequeueReusableCell failed while casting")
+        }
+        return cell
+    }
+    
+    func dequeueHeader<T: UICollectionReusableView>(for indexPath: IndexPath) -> T {
+        guard let cell = self.dequeueReusableSupplementaryView(ofKind: CollectionViewSupplementaryViewKind.header.rawValue, withReuseIdentifier: T.className, for: indexPath) as? T else {
+            fatalError("DequeueReusableCell failed while casting")
+        }
+        return cell
     }
     
     func register<T: UICollectionViewCell>(cell: T.Type) {

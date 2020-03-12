@@ -18,8 +18,6 @@ class ResultDetailsViewController: UIViewController {
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var copyRightsLabel: UILabel!
     @IBOutlet private weak var primaryGenreNameLabel: UILabel!
-
-
     @IBOutlet private weak var playButton: UIButton!
 
     private var model: SearchModel.ViewModel.Result
@@ -38,7 +36,6 @@ class ResultDetailsViewController: UIViewController {
         super.viewDidLoad()
         configure(model: model)
     }
-    
     
     func configure(model: SearchModel.ViewModel.Result) {
         previewImageView.load(url: URL(string: model.artworkUrl100))

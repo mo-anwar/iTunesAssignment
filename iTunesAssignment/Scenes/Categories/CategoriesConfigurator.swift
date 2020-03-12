@@ -6,10 +6,9 @@
 //  Copyright © 2020 S4M. All rights reserved.
 //
 
-
 import UIKit
 
-class CategoriesConfigurator {
+final class CategoriesConfigurator {
     
     // MARK: Configuration
     class func viewcontroller(outputDelegate: CategoriesViewControllerOutputDelegate, selectedCategoriesIds: [Int]) -> CategoriesViewController {

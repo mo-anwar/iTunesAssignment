@@ -16,7 +16,7 @@ class AlertBuilder {
         alertController = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
     }
     
-    public func setPopoverPresentationProperties(sourceView: UIView? = nil, sourceRect:CGRect? = nil, barButtonItem: UIBarButtonItem? = nil, permittedArrowDirections: UIPopoverArrowDirection? = nil) -> Self {
+    public func setPopoverPresentationProperties(sourceView: UIView? = nil, sourceRect: CGRect? = nil, barButtonItem: UIBarButtonItem? = nil, permittedArrowDirections: UIPopoverArrowDirection? = nil) -> Self {
         
         if let poc = alertController.popoverPresentationController {
             if let view = sourceView {
@@ -36,7 +36,7 @@ class AlertBuilder {
         return self
     }
     
-    public func addAction(title: String = "", style: UIAlertAction.Style = .default, handler: (() -> ())? = { }) -> Self {
+    public func addAction(title: String = "", style: UIAlertAction.Style = .default, handler: (() -> Void)? = { }) -> Self {
         alertController.addAction(UIAlertAction(title: title, style: style, handler: { _ in handler?() }))
         return self
     }
@@ -47,7 +47,7 @@ class AlertBuilder {
 }
 
 extension UIAlertController {
-    func show(animated: Bool = true, completionHandler: (() -> ())? = nil) {
+    func show(animated: Bool = true, completionHandler: (() -> Void)? = nil) {
         guard let rootVC = UIApplication.shared.keyWindow?.rootViewController else {
             return
         }

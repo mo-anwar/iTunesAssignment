@@ -12,9 +12,7 @@ enum Constants {
     
     static let baseURL = "https://itunes.apple.com/"
     
-    enum searchEndpoints {
+    enum SearchEndpoints {
         static let search = "search"
     }
-    
-
 }

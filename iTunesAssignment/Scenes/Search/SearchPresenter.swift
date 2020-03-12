@@ -14,11 +14,10 @@ extension SearchPresenter: SearchInteractorOutputProtocol {
     func display(results: SearchResultResponse) {
         var viewModels = SearchResultViewModel()
         results.forEach {
-            viewModels.append(($0.0,  $0.1.map { SearchModel.ViewModel.Result(model: $0)}))
+            viewModels.append(($0.0, $0.1.map { SearchModel.ViewModel.Result(model: $0)}))
         }
         output.display(results: viewModels)
     }
-    
     
     func showIndicator() {
         output.showIndicator()
@@ -37,4 +36,3 @@ extension SearchPresenter: SearchInteractorOutputProtocol {
     }
     
 }
-

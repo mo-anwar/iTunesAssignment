@@ -10,6 +10,8 @@ target 'iTunesAssignment' do
   pod 'IQKeyboardManagerSwift'
   pod 'Kingfisher'
   pod 'MBProgressHUD'
+  pod 'SwiftLint'
+
 
   target 'iTunesAssignmentTests' do
     inherit! :search_paths

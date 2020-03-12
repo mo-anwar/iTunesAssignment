@@ -11,7 +11,8 @@ import UIKit
 extension UITableView {
     
     func dequeueCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {
-        return self.dequeueReusableCell(withIdentifier: T.className, for: indexPath) as! T
+         guard let cell = self.dequeueReusableCell(withIdentifier: T.className, for: indexPath) as? T else { fatalError("DequeueReusableCell failed while casting") }
+        return cell
     }
     
     func register<T: UITableViewCell>(cell: T.Type) {

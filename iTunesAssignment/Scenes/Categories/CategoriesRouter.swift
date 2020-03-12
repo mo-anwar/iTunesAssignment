@@ -6,10 +6,9 @@
 //  Copyright © 2020 S4M. All rights reserved.
 //
 
-
 import UIKit
 
-class CategoriesRouter {
+final class CategoriesRouter {
     weak var viewController: CategoriesViewController!
 }
 

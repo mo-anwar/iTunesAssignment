@@ -63,5 +63,5 @@ protocol SearchRouterProtocol {
 typealias SearchResult = Result<SearchModel.Response, Error>
 
 protocol SearchWorkerProtocol: class {
-    func search(parameters: SearchModel.Request, completionHandler: @escaping (SearchResult) -> ())
+    func search(parameters: SearchModel.Request, completionHandler: @escaping (SearchResult) -> Void)
 }

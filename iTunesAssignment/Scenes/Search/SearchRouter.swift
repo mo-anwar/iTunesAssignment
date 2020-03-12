@@ -22,6 +22,4 @@ extension SearchRouter: SearchRouterProtocol {
     func navigateToSearchResult(results: SearchResultViewModel) {
         viewController.navigationController?.pushViewController(SearchResultsConfigurator.viewcontroller(results: results), animated: true)
     }
-    
-    
 }

@@ -14,7 +14,7 @@ extension UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    func present(_ viewController: UIViewController, requiresFullScreen: Bool = true, completion: (() -> ())? = nil) {
+    func present(_ viewController: UIViewController, requiresFullScreen: Bool = true, completion: (() -> Void)? = nil) {
         if #available(iOS 13.0, *) {
             viewController.modalPresentationStyle = requiresFullScreen ? .fullScreen : .automatic
         }

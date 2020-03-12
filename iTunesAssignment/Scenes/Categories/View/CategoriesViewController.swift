@@ -62,7 +62,7 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.cellId) as! CategoryTableViewCell
+        let cell: CategoryTableViewCell = tableView.dequeueCell(for: indexPath)
         cell.configure(model: categories[indexPath.row])
         return cell
     }
@@ -70,8 +70,7 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         output.didSelectRow(at: indexPath)
     }
-    
-    
+        
 }
 
 // MARK: Connect View, Interactor, and Presenter

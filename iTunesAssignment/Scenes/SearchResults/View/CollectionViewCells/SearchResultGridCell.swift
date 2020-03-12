@@ -13,7 +13,7 @@ class SearchResultGridCell: UICollectionViewCell {
     @IBOutlet private weak var previewImageView: UIImageView!
     @IBOutlet private weak var trackNameLabel: UILabel!
     
-    func configure(model:SearchModel.ViewModel.Result) {
+    func configure(model: SearchModel.ViewModel.Result) {
         previewImageView.load(url: URL(string: model.artworkUrl100))
         trackNameLabel.text = model.trackName ?? model.collectionName ?? ""
     }

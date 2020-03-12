@@ -22,7 +22,7 @@ extension UIView {
         return UINib(nibName: self.className, bundle: nil)
     }
     
-    func attachTapGesture(_ handler: @escaping () -> ()) {
+    func attachTapGesture(_ handler: @escaping () -> Void) {
         isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer()
         tapGesture.handler(handler)
@@ -56,7 +56,7 @@ extension UIView {
         
     }
     
-    func constraint(block: (UIView) -> ()) {
+    func constraint(block: (UIView) -> Void) {
         translatesAutoresizingMaskIntoConstraints = false
         block(self)
     }

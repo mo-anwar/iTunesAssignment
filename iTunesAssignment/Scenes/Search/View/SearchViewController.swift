@@ -18,7 +18,6 @@ final class SearchViewController: UIViewController {
     // MARK: Properties
     var output: SearchViewControllerOutputProtocol!
     var router: SearchRouter!
-    var viewModel: SearchModel.ViewModel?
     private var categories = [ CategoriesModel.ViewModel.Category]()
 
     // MARK: View lifecycle
@@ -33,11 +32,10 @@ final class SearchViewController: UIViewController {
     }
     
     private func setupCollectionView() {
-        categoriesCollectionView.dataSource =  self
+        categoriesCollectionView.dataSource = self
         categoriesCollectionView.register(cell: CategoryCollectionViewCell.self)
         let flowLayout = categoriesCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout
         flowLayout?.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        flowLayout?.sectionInset = UIEdgeInsets(top: 4, left: 2, bottom: 4, right: 0)
     }
     
     // MARK: Actions
@@ -65,7 +63,7 @@ extension SearchViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.cellId, for: indexPath) as! CategoryCollectionViewCell
+        let cell: CategoryCollectionViewCell = collectionView.dequeueCell(for: indexPath)
         cell.configure(name: categories[indexPath.row].name)
         return cell
     }

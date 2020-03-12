@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIGestureRecognizer {
-    func handler(_ closure: @escaping () -> ()) {
+    func handler(_ closure: @escaping () -> Void) {
         objc_removeAssociatedObjects(self)
         let sleeve = ClosureSleeve(closure)
         addTarget(sleeve, action: #selector(ClosureSleeve.invoke))
@@ -18,9 +18,9 @@ extension UIGestureRecognizer {
 }
 
 @objc class ClosureSleeve: NSObject {
-    let closure: () -> ()
+    let closure: () -> Void
     
-    init (_ closure: @escaping () -> ()) {
+    init (_ closure: @escaping () -> Void) {
         self.closure = closure
         super.init()
     }

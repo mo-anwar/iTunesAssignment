@@ -32,7 +32,7 @@ enum SearchNetworkRouter: URLRequestConvertible {
         let endpoint: String
         switch self {
         case .search:
-            endpoint = Constants.searchEndpoints.search
+            endpoint = Constants.SearchEndpoints.search
         }
         return URL(string: Constants.baseURL)!.appendingPathComponent(endpoint)
     }

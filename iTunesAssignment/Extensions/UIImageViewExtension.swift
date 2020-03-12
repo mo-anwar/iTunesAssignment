@@ -22,7 +22,7 @@ extension UIImageView {
         }
     }
     
-    func onTap(_ closure: @escaping () -> ()) {
+    func onTap(_ closure: @escaping () -> Void) {
         let tapGestureRecognizer = UITapGestureRecognizer()
         tapGestureRecognizer.handler(closure)
         isUserInteractionEnabled = true

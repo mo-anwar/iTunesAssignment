@@ -36,6 +36,7 @@
 		9430441E24186DBA00CF4848 /* SearchResultsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9430441A24186DBA00CF4848 /* SearchResultsConfigurator.swift */; };
 		9430442324186DCB00CF4848 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9430442124186DCB00CF4848 /* SearchResultsViewController.swift */; };
 		9430442424186DCB00CF4848 /* SearchResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9430442224186DCB00CF4848 /* SearchResultsViewController.xib */; };
+		945CE53F241A5DCB0097BED7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 945CE53E241A5DCB0097BED7 /* .swiftlint.yml */; };
 		9476A0E2241933A100C33467 /* CategoriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476A0DE241933A100C33467 /* CategoriesInteractor.swift */; };
 		9476A0E3241933A100C33467 /* CategoriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476A0DF241933A100C33467 /* CategoriesConfigurator.swift */; };
 		9476A0E4241933A100C33467 /* CategoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476A0E0241933A100C33467 /* CategoriesPresenter.swift */; };
@@ -111,6 +112,7 @@
 		9430441A24186DBA00CF4848 /* SearchResultsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsConfigurator.swift; sourceTree = "<group>"; };
 		9430442124186DCB00CF4848 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		9430442224186DCB00CF4848 /* SearchResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsViewController.xib; sourceTree = "<group>"; };
+		945CE53E241A5DCB0097BED7 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9476A0DE241933A100C33467 /* CategoriesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesInteractor.swift; sourceTree = "<group>"; };
 		9476A0DF241933A100C33467 /* CategoriesConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesConfigurator.swift; sourceTree = "<group>"; };
 		9476A0E0241933A100C33467 /* CategoriesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesPresenter.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		9430437024181E7B00CF4848 = {
 			isa = PBXGroup;
 			children = (
+				945CE53E241A5DCB0097BED7 /* .swiftlint.yml */,
 				9430437B24181E7B00CF4848 /* iTunesAssignment */,
 				9430439224181E7C00CF4848 /* iTunesAssignmentTests */,
 				9430437A24181E7B00CF4848 /* Products */,
@@ -463,6 +466,7 @@
 			buildConfigurationList = 9430439824181E7C00CF4848 /* Build configuration list for PBXNativeTarget "iTunesAssignment" */;
 			buildPhases = (
 				3507B23789F3617A37B68F7C /* [CP] Check Pods Manifest.lock */,
+				945CE540241A5E050097BED7 /* SwiftLint */,
 				9430437524181E7B00CF4848 /* Sources */,
 				9430437624181E7B00CF4848 /* Frameworks */,
 				9430437724181E7B00CF4848 /* Resources */,
@@ -539,6 +543,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				945CE53F241A5DCB0097BED7 /* .swiftlint.yml in Resources */,
 				9430438924181E7C00CF4848 /* LaunchScreen.storyboard in Resources */,
 				9476A0F42419341100C33467 /* CategoryTableViewCell.xib in Resources */,
 				9476A0FF241966CE00C33467 /* SearchResultListCell.xib in Resources */,
@@ -623,6 +628,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iTunesAssignment/Pods-iTunesAssignment-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		945CE540241A5E050097BED7 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

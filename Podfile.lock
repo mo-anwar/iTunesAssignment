@@ -5,12 +5,14 @@ PODS:
     - Kingfisher/Core (= 5.13.2)
   - Kingfisher/Core (5.13.2)
   - MBProgressHUD (1.2.0)
+  - SwiftLint (0.39.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.9.1)
   - IQKeyboardManagerSwift
   - Kingfisher
   - MBProgressHUD
+  - SwiftLint
 
 SPEC REPOS:
   trunk:
@@ -18,13 +20,15 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - Kingfisher
     - MBProgressHUD
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: 3af163d79272607b49bb9c221294ced9bb52a26b
+PODFILE CHECKSUM: 2d032a2ec2373bd82fe489a37318be2ffcfb5704
 
 COCOAPODS: 1.8.4

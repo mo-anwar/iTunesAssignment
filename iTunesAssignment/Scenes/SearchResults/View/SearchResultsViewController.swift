@@ -6,11 +6,10 @@
 //  Copyright © 2020 S4M. All rights reserved.
 //
 
-
 import UIKit
 
 // MARK: View
-class SearchResultsViewController: UIViewController {
+final class SearchResultsViewController: UIViewController {
     
     // MARK: IBOutlets
     @IBOutlet private weak var searchResultsCollectionView: UICollectionView!
@@ -19,7 +18,7 @@ class SearchResultsViewController: UIViewController {
     var router: SearchResultsRouter!
     private var layoutType = LayoutType.grid { didSet { searchResultsCollectionView.reloadData() }}
     private var results = SearchResultViewModel()
-
+    
     private enum LayoutType {
         case grid, list
     }
@@ -46,8 +45,8 @@ class SearchResultsViewController: UIViewController {
     }
     
     private func setupCollectionView() {
-        searchResultsCollectionView.dataSource =  self
-        searchResultsCollectionView.delegate =  self
+        searchResultsCollectionView.dataSource = self
+        searchResultsCollectionView.delegate = self
         searchResultsCollectionView.register(cell: SearchResultListCell.self)
         searchResultsCollectionView.register(cell: SearchResultGridCell.self)
         searchResultsCollectionView.register(reusableView: SearchResultHeader.self, for: .header)
@@ -70,7 +69,7 @@ class SearchResultsViewController: UIViewController {
 
 // MARK: UICollectionViewDataSource, UICollectionViewDelegate
 extension SearchResultsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return results.count
         
@@ -83,18 +82,19 @@ extension SearchResultsViewController: UICollectionViewDataSource, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch layoutType {
         case .grid:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultGridCell.cellId, for: indexPath) as! SearchResultGridCell
+            let cell: SearchResultGridCell = collectionView.dequeueCell(for: indexPath)
             cell.configure(model: results[indexPath.section].1[indexPath.row])
             return cell
         case .list:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultListCell.cellId, for: indexPath) as! SearchResultListCell
+            let cell: SearchResultListCell = collectionView.dequeueCell(for: indexPath)
             cell.configure(model: results[indexPath.section].1[indexPath.row])
             return cell
+            
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: CollectionViewSupplementaryViewKind.header.rawValue, withReuseIdentifier: SearchResultHeader.headerId, for: indexPath) as! SearchResultHeader
+        let headerView: SearchResultHeader = collectionView.dequeueHeader(for: indexPath)
         headerView.configure(name: results[indexPath.section].0)
         return headerView
     }

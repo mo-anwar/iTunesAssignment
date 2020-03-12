@@ -41,4 +41,3 @@ extension CategoriesInteractor: CategoriesViewControllerOutputProtocol {
         output.dispaly(items: items)
     }
 }
-

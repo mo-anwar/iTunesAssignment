@@ -15,11 +15,11 @@ enum ErrorHandler: Error {
 
 final class SearchWorker: SearchWorkerProtocol {
     
-    func search(parameters: SearchModel.Request, completionHandler: @escaping (SearchResult) -> ()) {
+    func search(parameters: SearchModel.Request, completionHandler: @escaping (SearchResult) -> Void) {
         
-        Alamofire.request(SearchNetworkRouter.search(parameters: parameters)).responseJSON { response in
+        Alamofire.request(SearchNetworkRouter.search(parameters: parameters)).responseData { response in
             switch response.result {
-            case .success(_):
+            case .success: 
                 do {
                     if let data = response.data {
                         let result = try JSONDecoder().decode(SearchModel.Response.self, from: data)

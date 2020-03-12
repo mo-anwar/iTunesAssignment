@@ -21,7 +21,7 @@ public extension JSONDecoder {
     func decode<T>(_ type: T.Type,
                    from data: Data,
                    keyPath: String,
-                   keyPathSeparator separator: String = ".") throws -> T where T : Decodable {
+                   keyPathSeparator separator: String = ".") throws -> T where T: Decodable {
         userInfo[keyPathUserInfoKey] = keyPath.components(separatedBy: separator)
         return try decode(KeyPathWrapper<T>.self, from: data).object
     }
