@@ -1,5 +1,5 @@
 //
-//  UITableViewCellExtensions.swift
+//  UICollectionViewCellExtensions.swift
 //  iTunesAssignment
 //
 //  Created by Mohamed anwar on 3/13/20.
@@ -8,9 +8,14 @@
 
 import UIKit
 
-extension UITableViewCell {
-    
+extension UICollectionViewCell {
     class var cellId: String {
+        return "\(self)"
+    }
+}
+
+extension UICollectionReusableView {
+    class var headerId: String {
         return "\(self)"
     }
 }

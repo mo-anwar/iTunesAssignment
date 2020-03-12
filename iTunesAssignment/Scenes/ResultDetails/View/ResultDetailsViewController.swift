@@ -10,7 +10,7 @@ import UIKit
 import AVKit
 
 // MARK: View
-class ResultDetailsViewController: UIViewController {
+final class ResultDetailsViewController: UIViewController {
     
     @IBOutlet private weak var previewImageView: UIImageView!
     @IBOutlet private weak var trackNameLabel: UILabel!

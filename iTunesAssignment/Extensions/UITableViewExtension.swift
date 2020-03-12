@@ -1,9 +1,9 @@
 //
 //  UITableViewExtension.swift
-//  Dubai Police
+//  iTunesAssignment
 //
-//  Created by Vortex on 10/21/19.
-//  Copyright © 2019 Vortex. All rights reserved.
+//  Created by Mohamed anwar on 3/13/20.
+//  Copyright © 2020 S4M. All rights reserved.
 //
 
 import UIKit

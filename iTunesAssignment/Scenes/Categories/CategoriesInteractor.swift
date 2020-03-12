@@ -7,7 +7,7 @@
 //
 import Foundation
 
-class CategoriesInteractor {
+final class CategoriesInteractor {
     private var output: CategoriesInteractorOutputProtocol?
     private var selectedCategoriesIds: [Int]
     private var items: [CategoriesModel.ViewModel.Category] = [

@@ -1,9 +1,9 @@
 //
 //  URLRequestConveritble.swift
-//  nine-hundred-trips
+//  iTunesAssignment
 //
-//  Created by Vortex on 4/21/19.
-//  Copyright © 2019 Ibtdi. All rights reserved.
+//  Created by Mohamed anwar on 3/13/20.
+//  Copyright © 2020 S4M. All rights reserved.
 //
 
 import Foundation

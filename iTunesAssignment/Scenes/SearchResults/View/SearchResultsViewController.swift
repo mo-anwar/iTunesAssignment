@@ -15,7 +15,7 @@ final class SearchResultsViewController: UIViewController {
     @IBOutlet private weak var searchResultsCollectionView: UICollectionView!
     
     // MARK: Properties
-    var router: SearchResultsRouter!
+    var router: SearchResultsRouterProtocol!
     private var layoutType = LayoutType.grid { didSet { searchResultsCollectionView.reloadData() }}
     private var viewModels = [SearchModel.ViewModel]()
     

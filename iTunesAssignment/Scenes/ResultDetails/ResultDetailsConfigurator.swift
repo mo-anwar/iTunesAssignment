@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResultDetailsConfigurator {
+final class ResultDetailsConfigurator {
     
     // MARK: Configuration
     class func viewcontroller(model: SearchModel.ViewModel.Result) -> ResultDetailsViewController {

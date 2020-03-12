@@ -1,9 +1,9 @@
 //
-//  UIViewExtension.swift
-//  Dubai Police
+//  UIView.swift
+//  iTunesAssignment
 //
-//  Created by Vortex on 10/21/19.
-//  Copyright © 2019 Vortex. All rights reserved.
+//  Created by Mohamed anwar on 3/13/20.
+//  Copyright © 2020 S4M. All rights reserved.
 //
 
 import UIKit
@@ -14,19 +14,8 @@ protocol NibLoadable {
 }
 extension UIView {
     
-    var fittingHeight: CGFloat {
-        return systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
-    }
-    
     static var nib: UINib {
         return UINib(nibName: self.className, bundle: nil)
-    }
-    
-    func attachTapGesture(_ handler: @escaping () -> Void) {
-        isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer()
-        tapGesture.handler(handler)
-        addGestureRecognizer(tapGesture)
     }
     
     func showActivityIndicator(isUserInteractionEnabled: Bool) {
@@ -53,11 +42,5 @@ extension UIView {
             fatalError("The nib \(nib) expected its root view to be of type \(self)")
         }
         return view
-        
-    }
-    
-    func constraint(block: (UIView) -> Void) {
-        translatesAutoresizingMaskIntoConstraints = false
-        block(self)
     }
 }

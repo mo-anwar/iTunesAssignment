@@ -21,12 +21,7 @@ final class SearchResultsConfigurator {
     }
 }
 
-// MARK: View Interface
-protocol SearchResultsViewControllerOutputProtocol {
-
-}
-
 // MARK: Router
 protocol SearchResultsRouterProtocol {
-
+    func navigateToResultDetails(model: SearchModel.ViewModel.Result)
 }
