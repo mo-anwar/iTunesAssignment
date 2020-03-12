@@ -81,4 +81,16 @@ final class SearchTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
+    
+    func testsDidTapShowCategoiesButton() {
+        // Given
+        let selectedIds = Array(1...5)
+        
+        // When
+        viewSpy.router.navigateToCategories(selectedCategoriesIds: selectedIds)
+        
+        // Then
+        XCTAssertEqual(routerSpy.navigateToCategoriesCallCount, 1)
+        XCTAssertEqual(routerSpy.passedSelectedCategoriesIds, selectedIds)
+    }
 }
