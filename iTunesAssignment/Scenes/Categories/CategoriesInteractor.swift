@@ -8,7 +8,7 @@
 import Foundation
 
 class CategoriesInteractor {
-    var output: CategoriesInteractorOutputProtocol!
+    private var output: CategoriesInteractorOutputProtocol?
     private var selectedCategoriesIds: [Int]
     private var items: [CategoriesModel.ViewModel.Category] = [
         .init(id: 1, name: "Album"),
@@ -20,8 +20,9 @@ class CategoriesInteractor {
         .init(id: 7, name: "Song")
     ]
     
-    init(selectedCategoriesIds: [Int]) {
+    init(selectedCategoriesIds: [Int], output: CategoriesInteractorOutputProtocol) {
         self.selectedCategoriesIds = selectedCategoriesIds
+        self.output = output
     }
 }
 
@@ -29,7 +30,7 @@ extension CategoriesInteractor: CategoriesViewControllerOutputProtocol {
     
     func didSelectRow(at indexPath: IndexPath) {
         items[indexPath.row].isSelected.toggle()
-        output.dispaly(items: items)
+        output?.dispaly(items: items)
     }
     
     func getItems() {
@@ -38,6 +39,6 @@ extension CategoriesInteractor: CategoriesViewControllerOutputProtocol {
                 items[index].isSelected = true
             }
         }
-        output.dispaly(items: items)
+        output?.dispaly(items: items)
     }
 }

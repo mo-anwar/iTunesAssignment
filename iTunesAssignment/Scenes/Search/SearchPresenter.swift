@@ -7,32 +7,36 @@
 //
 
 final class SearchPresenter {
-    weak var output: SearchPresenterOutputProtocol!
+    
+    private weak var output: SearchPresenterOutputProtocol?
+    
+    init(output: SearchPresenterOutputProtocol) {
+        self.output = output
+    }
 }
 
 extension SearchPresenter: SearchInteractorOutputProtocol {
-    func display(results: SearchResultResponse) {
-        var viewModels = SearchResultViewModel()
-        results.forEach {
-            viewModels.append(($0.0, $0.1.map { SearchModel.ViewModel.Result(model: $0)}))
+    
+    func display(items: [SearchModel.Response]) {
+        let viewModels = items.compactMap {
+            SearchModel.ViewModel(
+                header: $0.entity ?? "",
+                resulsts: $0.results?.compactMap { SearchModel.ViewModel.Result(model: $0) } ?? []
+            )
         }
-        output.display(results: viewModels)
+        output?.display(items: viewModels)
     }
     
     func showIndicator() {
-        output.showIndicator()
+        output?.showIndicator()
     }
     
     func hideIndicator() {
-        output.hideIndicator()
+        output?.hideIndicator()
     }
     
     func showError(error: Error) {
-        if error as? ErrorHandler == .noAvailableData {
-            output.showError(error: "No Available Data")
-        } else {
-            output.showError(error: error.localizedDescription)
-        }
+        output?.showError(error: error.localizedDescription)
     }
     
 }

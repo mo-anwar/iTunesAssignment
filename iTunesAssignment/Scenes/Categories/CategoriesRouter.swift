@@ -8,12 +8,14 @@
 
 import UIKit
 
-final class CategoriesRouter {
-    weak var viewController: CategoriesViewController!
-}
-
-extension CategoriesRouter: CategoriesRouterProtocol {
-   
+final class CategoriesRouter: CategoriesRouterProtocol {
+    
+    private weak var viewController: CategoriesViewController!
+    
+    init(viewController: CategoriesViewController) {
+        self.viewController = viewController
+    }
+    
     // MARK: Navigation
     func pop() {
         viewController.pop()

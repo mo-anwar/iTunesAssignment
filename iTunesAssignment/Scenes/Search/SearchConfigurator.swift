@@ -13,17 +13,10 @@ final class SearchConfigurator {
     // MARK: Configuration
     class func viewcontroller() -> SearchViewController {
         let viewController = SearchViewController()
+        let presenter = SearchPresenter(output: viewController)
+        let interactor = SearchInteractor(output: presenter, worker: SearchWorker())
+        let router = SearchRouter(viewController: viewController)
         
-        let presenter = SearchPresenter()
-        presenter.output = viewController
-        
-        let interactor = SearchInteractor()
-        interactor.output = presenter
-        interactor.worker = SearchWorker()
-        
-        let router = SearchRouter()
-        router.viewController = viewController
-
         viewController.output = interactor
         viewController.router = router
         
@@ -32,31 +25,36 @@ final class SearchConfigurator {
 }
 
 // MARK: View Interface
+protocol SearchViewControllerInputProtocol {
+    var output: SearchViewControllerOutputProtocol! { get }
+    var router: SearchRouterProtocol! { get }
+}
+
 protocol SearchViewControllerOutputProtocol {
     func search(term: String, entities: [String])
 }
 
 // MARK: Interactor Interface
-typealias SearchResultResponse = [(String, [SearchModel.Response.Result])]
+
 protocol SearchInteractorOutputProtocol {
     func showIndicator()
     func hideIndicator()
     func showError(error: Error)
-    func display(results: SearchResultResponse)
+    func display(items: [SearchModel.Response])
 }
 
 // MARK: Presenter Interface
-typealias SearchResultViewModel = [(String, [SearchModel.ViewModel.Result])]
 protocol SearchPresenterOutputProtocol: class {
     func showIndicator()
     func hideIndicator()
     func showError(error: String)
-    func display(results: SearchResultViewModel)
+    func display(items: [SearchModel.ViewModel])
 }
 
 // MARK: Router
 protocol SearchRouterProtocol {
-
+    func navigateToCategories(selectedCategoriesIds: [Int])
+    func navigateToSearchResult(viewModels: [SearchModel.ViewModel])
 }
 
 // MARK: Worker

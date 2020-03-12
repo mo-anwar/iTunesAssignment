@@ -9,17 +9,25 @@
 import UIKit
 
 final class SearchRouter {
-    weak var viewController: SearchViewController!
+    
+    private weak var viewController: SearchViewController?
+    
+    init(viewController: SearchViewController) {
+        self.viewController = viewController
+    }
+    
 }
 
 extension SearchRouter: SearchRouterProtocol {
-   
+    
     // MARK: Navigation
     func navigateToCategories(selectedCategoriesIds: [Int]) {
-        viewController.navigationController?.pushViewController(CategoriesConfigurator.viewcontroller(outputDelegate: viewController, selectedCategoriesIds: selectedCategoriesIds), animated: true)
+        let categoriesViewController = CategoriesConfigurator.viewcontroller(outputDelegate: viewController, selectedCategoriesIds: selectedCategoriesIds)
+        viewController?.navigationController?.pushViewController(categoriesViewController, animated: true)
     }
     
-    func navigateToSearchResult(results: SearchResultViewModel) {
-        viewController.navigationController?.pushViewController(SearchResultsConfigurator.viewcontroller(results: results), animated: true)
+    func navigateToSearchResult(viewModels: [SearchModel.ViewModel]) {
+        let searchResultViewController = SearchResultsConfigurator.viewcontroller(viewModels: viewModels)
+        viewController?.navigationController?.pushViewController(searchResultViewController, animated: true)
     }
 }

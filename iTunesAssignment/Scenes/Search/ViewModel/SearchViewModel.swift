@@ -17,7 +17,7 @@ struct SearchModel {
         let resultCount: Double?
         let results: [Result]?
         let errorMessage: String?
-        
+        var entity: String?
         struct Result: Decodable {
             let artistName: String?
             let collectionName: String?
@@ -26,13 +26,16 @@ struct SearchModel {
             let primaryGenreName: String?
             let trackName: String?
             let previewUrl: String?
-            let longDescription: String?
+            let shortDescription: String?
         }
 
     }
     
     struct ViewModel {
         
+        let header: String
+        let resulsts: [Result]
+
         struct Result {
             let artistName: String
             let collectionName: String?
@@ -41,7 +44,7 @@ struct SearchModel {
             let primaryGenreName: String
             let trackName: String?
             let previewUrl: String?
-            let longDescription: String
+            let shortDescription: String
             
             init(model: Response.Result) {
                 artistName = model.artistName ?? ""
@@ -51,7 +54,7 @@ struct SearchModel {
                 primaryGenreName = model.primaryGenreName ?? ""
                 trackName = model.trackName
                 previewUrl = model.previewUrl
-                longDescription = model.longDescription ?? ""
+                shortDescription = model.shortDescription ?? ""
             }
         }
     }

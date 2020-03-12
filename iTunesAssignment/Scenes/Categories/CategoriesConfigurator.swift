@@ -11,17 +11,12 @@ import UIKit
 final class CategoriesConfigurator {
     
     // MARK: Configuration
-    class func viewcontroller(outputDelegate: CategoriesViewControllerOutputDelegate, selectedCategoriesIds: [Int]) -> CategoriesViewController {
+    class func viewcontroller(outputDelegate: CategoriesViewControllerOutputDelegate?, selectedCategoriesIds: [Int]) -> CategoriesViewController {
         let viewController = CategoriesViewController()
         
-        let presenter = CategoriesPresenter()
-        presenter.output = viewController
-        
-        let interactor = CategoriesInteractor(selectedCategoriesIds: selectedCategoriesIds)
-        interactor.output = presenter
-        
-        let router = CategoriesRouter()
-        router.viewController = viewController
+        let presenter = CategoriesPresenter(output: viewController)
+        let interactor = CategoriesInteractor(selectedCategoriesIds: selectedCategoriesIds, output: presenter)
+        let router = CategoriesRouter(viewController: viewController)
 
         viewController.output = interactor
         viewController.router = router
@@ -31,6 +26,12 @@ final class CategoriesConfigurator {
 }
 
 // MARK: View Interface
+protocol CategoriesViewControllerInputProtocol {
+    var output: CategoriesViewControllerOutputProtocol! { get }
+    var outputDelegate: CategoriesViewControllerOutputDelegate? { get }
+    var router: CategoriesRouterProtocol! { get }
+    
+}
 protocol CategoriesViewControllerOutputProtocol {
     func getItems()
     func didSelectRow(at indexPath: IndexPath)
@@ -48,7 +49,7 @@ protocol CategoriesPresenterOutputProtocol: class {
 
 // MARK: Router
 protocol CategoriesRouterProtocol {
-
+    func pop()
 }
 
 // MARK: View OutputDelegate

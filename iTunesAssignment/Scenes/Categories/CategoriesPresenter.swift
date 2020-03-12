@@ -6,14 +6,18 @@
 //  Copyright © 2020 S4M. All rights reserved.
 //
 
-class CategoriesPresenter {
-    weak var output: CategoriesPresenterOutputProtocol!
+final class CategoriesPresenter {
     
+   private weak var output: CategoriesPresenterOutputProtocol?
+    
+    init(output: CategoriesPresenterOutputProtocol) {
+        self.output = output
+    }
 }
 
 extension CategoriesPresenter: CategoriesInteractorOutputProtocol {
     
     func dispaly(items: [CategoriesModel.ViewModel.Category]) {
-        output.dispaly(items: items)
+        output?.dispaly(items: items)
     }
 }

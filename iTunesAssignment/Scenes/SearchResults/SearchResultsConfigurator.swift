@@ -11,8 +11,8 @@ import UIKit
 final class SearchResultsConfigurator {
     
     // MARK: Configuration
-    class func viewcontroller(results: SearchResultViewModel) -> SearchResultsViewController {
-        let viewController = SearchResultsViewController(results: results)
+    class func viewcontroller(viewModels: [SearchModel.ViewModel]) -> SearchResultsViewController {
+        let viewController = SearchResultsViewController(viewModels: viewModels)
         
         let router = SearchResultsRouter()
         router.viewController = viewController

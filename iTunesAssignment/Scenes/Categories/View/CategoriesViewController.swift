@@ -9,15 +9,15 @@
 import UIKit
 
 // MARK: View
-class CategoriesViewController: UIViewController {
+final class CategoriesViewController: UIViewController, CategoriesViewControllerInputProtocol {
+    
     // MARK: IBOutlets
     @IBOutlet private weak var categoriesTableView: UITableView!
     
     // MARK: Properties
     var output: CategoriesViewControllerOutputProtocol!
     weak var outputDelegate: CategoriesViewControllerOutputDelegate?
-    var router: CategoriesRouter!
-    var viewModel: CategoriesModel.ViewModel?
+    var router: CategoriesRouterProtocol!
     private var categories = [ CategoriesModel.ViewModel.Category]()
     
     // MARK: View lifecycle
@@ -34,6 +34,7 @@ class CategoriesViewController: UIViewController {
     
     // MARK: SetupUI
     private func setupView() {
+        title = "Select Media Type"
         setupTableView()
         setupNavigationBarButton()
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: View
-final class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController, SearchViewControllerInputProtocol {
     
     // MARK: IBOutlets
     @IBOutlet private weak var searchTextField: UITextField!
@@ -17,8 +17,8 @@ final class SearchViewController: UIViewController {
     
     // MARK: Properties
     var output: SearchViewControllerOutputProtocol!
-    var router: SearchRouter!
-    private var categories = [ CategoriesModel.ViewModel.Category]()
+    var router: SearchRouterProtocol!
+    private var viewModels = [CategoriesModel.ViewModel.Category]()
 
     // MARK: View lifecycle
     override func viewDidLoad() {
@@ -40,17 +40,17 @@ final class SearchViewController: UIViewController {
     
     // MARK: Actions
     @IBAction private func didTapShowCategoiesButton(_ sender: UIButton) {
-        router.navigateToCategories(selectedCategoriesIds: categories.map { $0.id})
+        router.navigateToCategories(selectedCategoriesIds: viewModels.map { $0.id})
     }
     
     @IBAction private func didTapSubmitButton(_ sender: UIButton) {
         if let searchText = searchTextField.text {
             if searchText.isEmpty {
                 showError(error: "Search Text is empty")
-            } else if categories.isEmpty {
+            } else if viewModels.isEmpty {
                 showError(error: "Add atleast 1 Category.")
             } else {
-                output.search(term: searchText, entities: categories.map { $0.name.lowercased()})
+                output.search(term: searchText, entities: viewModels.map { $0.name.lowercased()})
             }
         }
     }
@@ -58,13 +58,14 @@ final class SearchViewController: UIViewController {
 
 // MARK: UICollectionViewDataSource
 extension SearchViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        return viewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CategoryCollectionViewCell = collectionView.dequeueCell(for: indexPath)
-        cell.configure(name: categories[indexPath.row].name)
+        cell.configure(name: viewModels[indexPath.row].name)
         return cell
     }
 }
@@ -72,9 +73,8 @@ extension SearchViewController: UICollectionViewDataSource {
 // MARK: Connect View, Interactor, and Presenter
 extension SearchViewController: SearchPresenterOutputProtocol {
     
-    func display(results: SearchResultViewModel) {
-        router.navigateToSearchResult(results: results)
-
+    func display(items: [SearchModel.ViewModel]) {
+        router.navigateToSearchResult(viewModels: items)
     }
     
     func showIndicator() {
@@ -98,7 +98,7 @@ extension SearchViewController: SearchPresenterOutputProtocol {
 extension SearchViewController: CategoriesViewControllerOutputDelegate {
     
     func didChooseCategories(items: [CategoriesModel.ViewModel.Category]) {
-        categories = items
+        viewModels = items
         categoriesCollectionView.reloadData()
     }
 }

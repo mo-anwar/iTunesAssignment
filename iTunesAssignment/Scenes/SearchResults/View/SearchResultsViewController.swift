@@ -17,14 +17,14 @@ final class SearchResultsViewController: UIViewController {
     // MARK: Properties
     var router: SearchResultsRouter!
     private var layoutType = LayoutType.grid { didSet { searchResultsCollectionView.reloadData() }}
-    private var results = SearchResultViewModel()
+    private var viewModels = [SearchModel.ViewModel]()
     
     private enum LayoutType {
         case grid, list
     }
     
-    init(results: SearchResultViewModel) {
-        self.results = results
+    init(viewModels: [SearchModel.ViewModel]) {
+        self.viewModels = viewModels
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -40,6 +40,7 @@ final class SearchResultsViewController: UIViewController {
     
     // MARK: SetupUI
     private func setupView() {
+        title = "Search Results"
         setupCollectionView()
         setupNavigationBarButtons()
     }
@@ -71,23 +72,23 @@ final class SearchResultsViewController: UIViewController {
 extension SearchResultsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return results.count
+        return viewModels.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return results[section].1.count
+        return viewModels[section].resulsts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch layoutType {
         case .grid:
             let cell: SearchResultGridCell = collectionView.dequeueCell(for: indexPath)
-            cell.configure(model: results[indexPath.section].1[indexPath.row])
+            cell.configure(model: viewModels[indexPath.section].resulsts[indexPath.row])
             return cell
         case .list:
             let cell: SearchResultListCell = collectionView.dequeueCell(for: indexPath)
-            cell.configure(model: results[indexPath.section].1[indexPath.row])
+            cell.configure(model: viewModels[indexPath.section].resulsts[indexPath.row])
             return cell
             
         }
@@ -95,7 +96,7 @@ extension SearchResultsViewController: UICollectionViewDataSource, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView: SearchResultHeader = collectionView.dequeueHeader(for: indexPath)
-        headerView.configure(name: results[indexPath.section].0)
+        headerView.configure(name: viewModels[indexPath.section].header)
         return headerView
     }
     
@@ -104,7 +105,7 @@ extension SearchResultsViewController: UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        router.navigateToResultDetails(model: results[indexPath.section].1[indexPath.row])
+        router.navigateToResultDetails(model: viewModels[indexPath.section].resulsts[indexPath.row])
     }
     
 }

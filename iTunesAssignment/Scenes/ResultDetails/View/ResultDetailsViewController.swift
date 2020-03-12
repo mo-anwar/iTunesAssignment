@@ -42,7 +42,7 @@ class ResultDetailsViewController: UIViewController {
         trackNameLabel.text = model.trackName ?? model.collectionName ?? ""
         artistNameLabel.text = model.artistName
         copyRightsLabel.text = model.copyright
-        descriptionLabel.text = model.longDescription
+        descriptionLabel.text = model.shortDescription
         primaryGenreNameLabel.text = model.primaryGenreName
         if model.previewUrl != nil {
             playButton.isHidden = false

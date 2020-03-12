@@ -49,12 +49,12 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifx-0T-q0s">
-                    <rect key="frame" x="32" y="385.5" width="311" height="100"/>
+                    <rect key="frame" x="32" y="385.5" width="311" height="110"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pJ3-aW-ajR">
-                            <rect key="frame" x="2" y="2" width="261" height="96"/>
+                            <rect key="frame" x="2" y="2" width="261" height="106"/>
                             <color key="backgroundColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="I4s-t5-laO">
+                            <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="I4s-t5-laO">
                                 <size key="itemSize" width="50" height="50"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -62,7 +62,7 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yI-4U-OZB">
-                            <rect key="frame" x="263" y="0.0" width="48" height="100"/>
+                            <rect key="frame" x="263" y="0.0" width="48" height="110"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                             <state key="normal" title="&gt;">
                                 <color key="titleColor" red="0.75285834070000002" green="0.75298899409999998" blue="0.75284999610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -79,7 +79,7 @@
                         <constraint firstAttribute="trailing" secondItem="1yI-4U-OZB" secondAttribute="trailing" id="8Ph-OL-p1L"/>
                         <constraint firstAttribute="trailing" secondItem="pJ3-aW-ajR" secondAttribute="trailing" constant="48" id="AZf-QN-PXg"/>
                         <constraint firstItem="pJ3-aW-ajR" firstAttribute="top" secondItem="Ifx-0T-q0s" secondAttribute="top" constant="2" id="Rsn-9m-EZg"/>
-                        <constraint firstAttribute="height" constant="100" id="TZr-Gc-IU5"/>
+                        <constraint firstAttribute="height" constant="110" id="TZr-Gc-IU5"/>
                         <constraint firstItem="pJ3-aW-ajR" firstAttribute="leading" secondItem="Ifx-0T-q0s" secondAttribute="leading" constant="2" id="Unx-WU-ZxU"/>
                         <constraint firstItem="1yI-4U-OZB" firstAttribute="top" secondItem="Ifx-0T-q0s" secondAttribute="top" id="dGx-SG-fvG"/>
                         <constraint firstItem="1yI-4U-OZB" firstAttribute="leading" secondItem="pJ3-aW-ajR" secondAttribute="trailing" id="vKQ-jb-Nka"/>
@@ -92,7 +92,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JK-Ra-zVK">
-                    <rect key="frame" x="87.5" y="553.5" width="200" height="40"/>
+                    <rect key="frame" x="87.5" y="563.5" width="200" height="40"/>
                     <color key="backgroundColor" red="0.53025031089999997" green="0.1575994194" blue="0.5919434428" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Acg-VQ-Bya"/>

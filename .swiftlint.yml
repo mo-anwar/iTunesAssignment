@@ -11,7 +11,6 @@ opt_in_rules:
   - block_based_kvo
   - class_delegate_protocol
   - contains_over_first_not_nil
-  - convenience_type
   - empty_count
   - explicit_init
   - fallthrough
@@ -81,4 +80,5 @@ identifier_name:
 excluded:
 - ${SRCROOT}/Pods
 - ${SRCROOT}/bundle
-
+- ${SRCROOT}/${PROJECT_NAME}Tests
+- ${SRCROOT}/${PROJECT_NAME}UITests

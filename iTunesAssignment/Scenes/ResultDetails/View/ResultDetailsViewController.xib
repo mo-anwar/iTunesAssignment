@@ -2,12 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultDetailsViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultDetailsViewController" customModule="iTunesAssignment" customModuleProvider="target">
             <connections>
                 <outlet property="artistNameLabel" destination="HRN-G1-YIm" id="ito-cW-6Fw"/>
                 <outlet property="copyRightsLabel" destination="5fh-BS-vgC" id="jtP-Hy-5bo"/>
@@ -24,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3dl-rb-BgV">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3dl-rb-BgV">
                     <rect key="frame" x="16" y="8" width="343" height="180"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="180" id="zBp-kO-bzp"/>
@@ -69,15 +70,14 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MSl-5I-YGX">
-                    <rect key="frame" x="187.5" y="301.5" width="0.0" height="0.0"/>
+                    <rect key="frame" x="187.5" y="98" width="0.0" height="0.0"/>
                     <subviews>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIt-XZ-Ewe">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="50" id="3xB-Lk-tHY"/>
-                                <constraint firstAttribute="height" constant="50" id="lLd-YH-V5V"/>
-                            </constraints>
-                            <state key="normal" title="Play" image="ic_play"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="0.0"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                            <state key="normal" image="ic_play">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <connections>
                                 <action selector="didTapPlayButton:" destination="-1" eventType="touchUpInside" id="NEV-20-beP"/>
                             </connections>
@@ -85,14 +85,15 @@
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="3dl-rb-BgV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="1GU-KG-JVY"/>
-                <constraint firstItem="MSl-5I-YGX" firstAttribute="top" secondItem="cHn-Sr-POp" secondAttribute="bottom" constant="16" id="Jwv-Ar-HLQ"/>
+                <constraint firstItem="MSl-5I-YGX" firstAttribute="centerY" secondItem="3dl-rb-BgV" secondAttribute="centerY" id="CD4-5t-l2q"/>
                 <constraint firstItem="MSl-5I-YGX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="N6X-jI-Nlp"/>
                 <constraint firstItem="3dl-rb-BgV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="RhW-PB-cxj"/>
                 <constraint firstItem="cHn-Sr-POp" firstAttribute="top" secondItem="wiB-xm-bIL" secondAttribute="bottom" constant="16" id="YLU-eb-Ixd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3dl-rb-BgV" secondAttribute="trailing" constant="16" id="f8H-mN-vdH"/>
+                <constraint firstItem="MSl-5I-YGX" firstAttribute="centerX" secondItem="3dl-rb-BgV" secondAttribute="centerX" id="k2Z-mX-Zeu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wiB-xm-bIL" secondAttribute="trailing" constant="16" id="rAW-gf-b2t"/>
                 <constraint firstItem="cHn-Sr-POp" firstAttribute="leading" secondItem="wiB-xm-bIL" secondAttribute="leading" id="sC6-Ni-jtn"/>
                 <constraint firstItem="wiB-xm-bIL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="tme-7n-wbH"/>
@@ -104,6 +105,6 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_play" width="835" height="835"/>
+        <image name="ic_play" width="80" height="80"/>
     </resources>
 </document>
