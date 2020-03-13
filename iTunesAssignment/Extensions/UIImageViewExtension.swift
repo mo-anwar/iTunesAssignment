@@ -11,7 +11,6 @@ import Kingfisher
 extension UIImageView {
     
     func load(url: URL?, placeholder: UIImage? = nil) {
-            var kf = self.kf
             kf.indicatorType = .activity
             kf.setImage(with: url, placeholder: placeholder)
     }

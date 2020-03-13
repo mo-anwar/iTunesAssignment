@@ -15,7 +15,6 @@ protocol URLRequestConvertible: Alamofire.URLRequestConvertible {
     var parameters: [String: Any]? { get }
     var url: URL { get }
     var encoding: ParameterEncoding { get }
-    
 }
 
 extension URLRequestConvertible {

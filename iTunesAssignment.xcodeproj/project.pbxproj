@@ -447,8 +447,8 @@
 			isa = PBXGroup;
 			children = (
 				9476A0F02419341100C33467 /* TableViewCell */,
-				9476A0EE2419340800C33467 /* CategoriesViewController.xib */,
 				9476A0E7241933AD00C33467 /* CategoriesViewController.swift */,
+				9476A0EE2419340800C33467 /* CategoriesViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
