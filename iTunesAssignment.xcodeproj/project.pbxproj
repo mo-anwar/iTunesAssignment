@@ -360,9 +360,9 @@
 		9430441524186D8A00CF4848 /* SearchResults */ = {
 			isa = PBXGroup;
 			children = (
-				9430442024186DBD00CF4848 /* View */,
 				9430441A24186DBA00CF4848 /* SearchResultsConfigurator.swift */,
 				9430441824186DBA00CF4848 /* SearchResultsRouter.swift */,
+				9430442024186DBD00CF4848 /* View */,
 			);
 			path = SearchResults;
 			sourceTree = "<group>";
@@ -526,8 +526,8 @@
 		9476A1102419B76500C33467 /* ResultDetails */ = {
 			isa = PBXGroup;
 			children = (
-				9476A11E2419B78E00C33467 /* View */,
 				9476A1152419B78400C33467 /* ResultDetailsConfigurator.swift */,
+				9476A11E2419B78E00C33467 /* View */,
 			);
 			path = ResultDetails;
 			sourceTree = "<group>";
