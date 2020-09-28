@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9409BEFE2521DBD900F542E3 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409BEFD2521DBD900F542E3 /* NetworkLayer.swift */; };
 		942E99D0241AEDD800651F85 /* CategoriesRouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942E99CF241AEDD800651F85 /* CategoriesRouterSpy.swift */; };
 		942E99D3241AEE5F00651F85 /* CategoriesViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942E99D2241AEE5F00651F85 /* CategoriesViewSpy.swift */; };
 		942E99D6241AEFB600651F85 /* CategoreisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942E99D5241AEFB600651F85 /* CategoreisTests.swift */; };
@@ -51,8 +52,6 @@
 		9476A0EF2419340800C33467 /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9476A0EE2419340800C33467 /* CategoriesViewController.xib */; };
 		9476A0F32419341100C33467 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476A0F12419341100C33467 /* CategoryTableViewCell.swift */; };
 		9476A0F42419341100C33467 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9476A0F22419341100C33467 /* CategoryTableViewCell.xib */; };
-		9476A0F824195D9600C33467 /* SearchResultGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476A0F624195D9600C33467 /* SearchResultGridCell.swift */; };
-		9476A0F924195D9600C33467 /* SearchResultGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9476A0F724195D9600C33467 /* SearchResultGridCell.xib */; };
 		9476A0FE241966CE00C33467 /* SearchResultListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476A0FC241966CE00C33467 /* SearchResultListCell.swift */; };
 		9476A0FF241966CE00C33467 /* SearchResultListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9476A0FD241966CE00C33467 /* SearchResultListCell.xib */; };
 		9476A10224196D6100C33467 /* SearchNetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476A10124196D6100C33467 /* SearchNetworkRouter.swift */; };
@@ -64,6 +63,8 @@
 		9476A1182419B78400C33467 /* ResultDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476A1152419B78400C33467 /* ResultDetailsConfigurator.swift */; };
 		9476A11D2419B78800C33467 /* ResultDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476A11C2419B78800C33467 /* ResultDetailsViewController.swift */; };
 		948370A32419C03B00AF75EB /* ResultDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9476A11B2419B78800C33467 /* ResultDetailsViewController.xib */; };
+		94F12610252083CC001367BC /* SearchResultGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94F1260E252083CC001367BC /* SearchResultGridCell.xib */; };
+		94F12611252083CC001367BC /* SearchResultGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1260F252083CC001367BC /* SearchResultGridCell.swift */; };
 		BFA6B3829323FDD49BE834EB /* Pods_iTunesAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA98C80D3C8B279CA11E60E /* Pods_iTunesAssignment.framework */; };
 		E3E1A3EA5C8A12D1A5A2509B /* Pods_iTunesAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A12977A9A51D0F21A185202 /* Pods_iTunesAssignmentTests.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		76879A4F11650B1BD9FE77E7 /* Pods-iTunesAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesAssignmentTests.debug.xcconfig"; path = "Target Support Files/Pods-iTunesAssignmentTests/Pods-iTunesAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B51E4D3E4F30365BCF8DDEC /* Pods-iTunesAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesAssignment.debug.xcconfig"; path = "Target Support Files/Pods-iTunesAssignment/Pods-iTunesAssignment.debug.xcconfig"; sourceTree = "<group>"; };
 		8C0776385050094924B84A2D /* Pods-iTunesAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesAssignment.release.xcconfig"; path = "Target Support Files/Pods-iTunesAssignment/Pods-iTunesAssignment.release.xcconfig"; sourceTree = "<group>"; };
+		9409BEFD2521DBD900F542E3 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		942E99CF241AEDD800651F85 /* CategoriesRouterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRouterSpy.swift; sourceTree = "<group>"; };
 		942E99D2241AEE5F00651F85 /* CategoriesViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewSpy.swift; sourceTree = "<group>"; };
 		942E99D5241AEFB600651F85 /* CategoreisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoreisTests.swift; sourceTree = "<group>"; };
@@ -132,8 +134,6 @@
 		9476A0EE2419340800C33467 /* CategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
 		9476A0F12419341100C33467 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		9476A0F22419341100C33467 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
-		9476A0F624195D9600C33467 /* SearchResultGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchResultGridCell.swift; path = ../SearchResultGridCell.swift; sourceTree = "<group>"; };
-		9476A0F724195D9600C33467 /* SearchResultGridCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchResultGridCell.xib; path = ../SearchResultGridCell.xib; sourceTree = "<group>"; };
 		9476A0FC241966CE00C33467 /* SearchResultListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultListCell.swift; sourceTree = "<group>"; };
 		9476A0FD241966CE00C33467 /* SearchResultListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultListCell.xib; sourceTree = "<group>"; };
 		9476A10124196D6100C33467 /* SearchNetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNetworkRouter.swift; sourceTree = "<group>"; };
@@ -145,6 +145,8 @@
 		9476A1152419B78400C33467 /* ResultDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDetailsConfigurator.swift; sourceTree = "<group>"; };
 		9476A11B2419B78800C33467 /* ResultDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultDetailsViewController.xib; sourceTree = "<group>"; };
 		9476A11C2419B78800C33467 /* ResultDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDetailsViewController.swift; sourceTree = "<group>"; };
+		94F1260E252083CC001367BC /* SearchResultGridCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchResultGridCell.xib; path = iTunesAssignment/Scenes/SearchResults/View/CollectionViewCells/SearchResultGridCell.xib; sourceTree = SOURCE_ROOT; };
+		94F1260F252083CC001367BC /* SearchResultGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResultGridCell.swift; path = iTunesAssignment/Scenes/SearchResults/View/CollectionViewCells/SearchResultGridCell.swift; sourceTree = SOURCE_ROOT; };
 		DCA98C80D3C8B279CA11E60E /* Pods_iTunesAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -168,6 +170,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9409BEFC2521DBC000F542E3 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				9409BEFD2521DBD900F542E3 /* NetworkLayer.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
 		942E99CC241AED9600651F85 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +247,7 @@
 			children = (
 				943043A32418285E00CF4848 /* Scenes */,
 				943043A0241825DE00CF4848 /* Core */,
+				9409BEFC2521DBC000F542E3 /* NetworkLayer */,
 				9476A10024196D3C00C33467 /* NetworkRouters */,
 				9476A10324196E7100C33467 /* Utils */,
 				943043BD2418348C00CF4848 /* Extensions */,
@@ -482,8 +493,8 @@
 		9476A0FA2419669E00C33467 /* GridLayout */ = {
 			isa = PBXGroup;
 			children = (
-				9476A0F624195D9600C33467 /* SearchResultGridCell.swift */,
-				9476A0F724195D9600C33467 /* SearchResultGridCell.xib */,
+				94F1260F252083CC001367BC /* SearchResultGridCell.swift */,
+				94F1260E252083CC001367BC /* SearchResultGridCell.xib */,
 			);
 			path = GridLayout;
 			sourceTree = "<group>";
@@ -653,11 +664,11 @@
 				9476A0FF241966CE00C33467 /* SearchResultListCell.xib in Resources */,
 				9430438624181E7C00CF4848 /* Assets.xcassets in Resources */,
 				9476A0EF2419340800C33467 /* CategoriesViewController.xib in Resources */,
-				9476A0F924195D9600C33467 /* SearchResultGridCell.xib in Resources */,
 				943043B12418289300CF4848 /* SearchViewController.xib in Resources */,
 				9476A10F24199FA000C33467 /* SearchResultHeader.xib in Resources */,
 				943043BC241830D400CF4848 /* CategoryCollectionViewCell.xib in Resources */,
 				948370A32419C03B00AF75EB /* ResultDetailsViewController.xib in Resources */,
+				94F12610252083CC001367BC /* SearchResultGridCell.xib in Resources */,
 				9430442424186DCB00CF4848 /* SearchResultsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -760,11 +771,11 @@
 			files = (
 				943043B02418289300CF4848 /* SearchViewController.swift in Sources */,
 				9476A0FE241966CE00C33467 /* SearchResultListCell.swift in Sources */,
+				9409BEFE2521DBD900F542E3 /* NetworkLayer.swift in Sources */,
 				9476A10524196E9D00C33467 /* Constants.swift in Sources */,
 				9476A10924197EAF00C33467 /* AlertBuilder.swift in Sources */,
 				9476A0E3241933A100C33467 /* CategoriesConfigurator.swift in Sources */,
 				943043E72418348C00CF4848 /* UIViewExtension.swift in Sources */,
-				9476A0F824195D9600C33467 /* SearchResultGridCell.swift in Sources */,
 				9476A10724196F4800C33467 /* URLRequestConvertible.swift in Sources */,
 				943043E52418348C00CF4848 /* UITableViewExtension.swift in Sources */,
 				9476A1182419B78400C33467 /* ResultDetailsConfigurator.swift in Sources */,
@@ -776,6 +787,7 @@
 				9476A0ED241933BF00C33467 /* CategoriesViewModel.swift in Sources */,
 				9430442324186DCB00CF4848 /* SearchResultsViewController.swift in Sources */,
 				943043A92418288600CF4848 /* SearchInteractor.swift in Sources */,
+				94F12611252083CC001367BC /* SearchResultGridCell.swift in Sources */,
 				943043DA2418348C00CF4848 /* UIImageViewExtension.swift in Sources */,
 				943043BB241830D400CF4848 /* CategoryCollectionViewCell.swift in Sources */,
 				943043B7241828BF00CF4848 /* SearchWorker.swift in Sources */,

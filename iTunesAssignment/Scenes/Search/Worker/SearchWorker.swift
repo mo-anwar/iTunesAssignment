@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import Alamofire
-
 enum NetworkError: Error, LocalizedError {
     case noDataAvailable
     var errorDescription: String? {
@@ -22,18 +20,13 @@ enum NetworkError: Error, LocalizedError {
 final class SearchWorker: SearchWorkerProtocol {
     
     func search(parameters: SearchModel.Request, completionHandler: @escaping (SearchResult) -> Void) {
-        Alamofire.request(SearchNetworkRouter.search(parameters: parameters)).responseData { response in
-            switch response.result {
-            case .success(let data):
-                do {
-                    let result = try JSONDecoder().decode(SearchModel.Response.self, from: data)
-                    if result.errorMessage != nil {
-                        completionHandler(.failure(NetworkError.noDataAvailable))
-                    } else {
-                        completionHandler(.success(result))
-                    }
-                } catch {
-                    completionHandler(.failure(error))
+        NetworkLayer.request(SearchNetworkRouter.search(parameters: parameters), decodedTo: SearchModel.Response.self) { result in
+            switch result {
+            case .success(let model):
+                if model.errorMessage != nil {
+                    completionHandler(.failure(NetworkError.noDataAvailable))
+                } else {
+                    completionHandler(.success(model))
                 }
             case .failure(let error):
                 completionHandler(.failure(error))

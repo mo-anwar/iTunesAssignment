@@ -18,6 +18,7 @@ final class SearchTests: XCTestCase {
     var routerSpy: SearchRouterSpy!
 
     override func setUp() {
+        super.setUp()
         viewSpy = SearchViewSpy()
         routerSpy = SearchRouterSpy()
         worker = SearchWorkerStub()
@@ -33,6 +34,7 @@ final class SearchTests: XCTestCase {
         presenter = nil
         routerSpy = nil
         viewSpy = nil
+        super.tearDown()
     }
     
     func testSearchSuccess() {
